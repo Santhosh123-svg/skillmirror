@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL: 'https://skillmirror.onrender.com',
 });
 
 API.interceptors.request.use((config) => {
@@ -13,24 +13,24 @@ API.interceptors.request.use((config) => {
 });
 
 export const loginUser = (email, password) =>
-  API.post('/auth/login', { email, password });
+  API.post('/api/auth/login', { email, password });
 
 export const registerUser = (name, email, password) =>
-  API.post('/auth/register', { name, email, password });
+  API.post('/api/auth/register', { name, email, password });
 
-export const getAllSkills = () => API.get('/skills');
+export const getAllSkills = () => API.get('/api/skills');
 
-export const getSkillById = (id) => API.get(`/skills/${id}`);
+export const getSkillById = (id) => API.get(`/api/skills/${id}`);
 
 export const getTasksBySkill = (skillId) =>
-  API.get(`/tasks/skill/${skillId}`);
+  API.get(`/api/tasks/skill/${skillId}`);
 
-export const getUserTasks = () => API.get('/tasks/user/my-tasks');
+export const getUserTasks = () => API.get('/api/tasks/user/my-tasks');
 
 export const submitTask = (taskId, submissionContent, language) =>
-  API.post(`/tasks/${taskId}/submit`, { submissionContent, language });
+  API.post(`/api/tasks/${taskId}/submit`, { submissionContent, language });
 
 export const createTask = (skillId, title, description) =>
-  API.post('/tasks', { skillId, title, description });
+  API.post('/api/tasks', { skillId, title, description });
 
 export default API;
