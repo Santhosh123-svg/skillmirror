@@ -17,7 +17,7 @@ export default function Submit() {
     setMessage('');
 
     try {
-      await API.post(`/tasks/${taskId}/submit`, { content: submission });
+      await API.post(`/api/tasks/${taskId}/submit`, { content: submission });
       setMessage('✅ Task submitted successfully!');
       setTimeout(() => navigate('/skills'), 2000);
     } catch (error) {

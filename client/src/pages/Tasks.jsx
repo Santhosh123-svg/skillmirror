@@ -16,7 +16,7 @@ export default function Tasks() {
 
   const fetchTasks = async () => {
     try {
-      const response = await API.get(`/tasks/skill/${skillId}`);
+      const response = await API.get(`/api/tasks/skill/${skillId}`);
       setTasks(response.data);
     } catch (error) {
       console.error('Failed to fetch tasks:', error);
