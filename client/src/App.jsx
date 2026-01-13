@@ -9,6 +9,7 @@ import TaskDetail from './pages/TaskDetail';
 export default function App() {
   return (
     <Routes>
+      <Route path="/" element={<Login />} />
       <Route path="/login" element={<Login />} />
 
       <Route
@@ -47,7 +48,6 @@ export default function App() {
         }
       />
 
-      <Route path="/" element={<Navigate to="/dashboard" />} />
       <Route path="*" element={<div>404 Not Found</div>} />
     </Routes>
   );
